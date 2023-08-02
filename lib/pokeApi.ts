@@ -1,4 +1,5 @@
 
+// !Get One
 export const getOnePokemon = async(name: string) => {
 
     const delay = Math.random() * 2000
@@ -14,7 +15,11 @@ export const getOnePokemon = async(name: string) => {
     return data as Pokemon
 }
 
+// !Get All (w/ pagination)
 export const getAllPokemon = async(page: number) => {
+
+    const delay = Math.random() * 2000
+    await new Promise(res => setTimeout(res, delay))
 
     const pageSize = 12
     const query = `https://pokeapi.co/api/v2/pokemon/?limit=${pageSize}&offset=${pageSize * (page - 1)}`
